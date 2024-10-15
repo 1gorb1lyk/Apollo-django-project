@@ -53,7 +53,7 @@ docker-compose up --build
 ```
 To declare the DB tables, you need to perform migrations further.
 ```
-docker-compose exec web python manage.py makemigration
+docker-compose exec web python manage.py makemigrations
 ```
 And then
 ```

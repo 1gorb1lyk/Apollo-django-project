@@ -106,7 +106,7 @@ class ContactAPI(APIView):
             return Response({"error": f"Failed to connect to Apollo API: {str(e)}"}, status=status.HTTP_502_BAD_GATEWAY)
 
         if response.status_code == 200:
-            return Response(f"New Contact has been created successfully!\n{response.text}",
+            return Response(f"New Contact has been created successfully!\n{response.json()}",
                             status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Failed to create contact'}, status=response.status_code)
